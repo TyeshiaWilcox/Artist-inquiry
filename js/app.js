@@ -13,7 +13,7 @@ $(document).ready(function() {
     function getData(t) {
 
         // Last.fm query URL
-        var lastFmUrl = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + t + " &api_key=d4a380aaf885c9d212b299849e585e3f&format=json";
+        var lastFmUrl = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + t + " &api_key=d4a380aaf885c9d212b299849e585e3f&format=json";
 
         // AJAX Search Settings for Last.fm (copied from Rapid API)
         var lastFmSearch = {
@@ -21,14 +21,14 @@ $(document).ready(function() {
         	"crossDomain": true,
 	        "url": lastFmUrl,
 	        "method": "POST",
-	        "headers": {
-		        "x-rapidapi-host": "LastFmdimashirokovV1.p.rapidapi.com",
-		        "x-rapidapi-key": "b8d9d38605msh9b55791ebf9d07dp107fa4jsn8108686f06e9",
-		        "content-type": "application/x-www-form-urlencoded"
-	        },
+	        // "headers": {
+		    //     "x-rapidapi-host": "LastFmdimashirokovV1.p.rapidapi.com",
+		    //     "x-rapidapi-key": "b8d9d38605msh9b55791ebf9d07dp107fa4jsn8108686f06e9",
+		    //     "content-type": "application/x-www-form-urlencoded"
+	        // },
 	        "data": {
                 "artist": t,
-		        "apiKey": "d4a380aaf885c9d212b299849e585e3f"
+		        // "apiKey": "d4a380aaf885c9d212b299849e585e3f"
 	        }
         }
 
@@ -45,7 +45,8 @@ $(document).ready(function() {
         var deezerSearch = {
             "async": true,
             "crossDomain": true,
-            "url": "https://deezerdevs-deezer.p.rapidapi.com/search?q="+t,
+            "url": "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + t,
+            // "url": "https://api.deezer.com/search?q=" + t,
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -66,7 +67,7 @@ $(document).ready(function() {
             var deezerArtistSearch = {
                 "async": true,
                 "crossDomain": true,
-                "url": "https://deezerdevs-deezer.p.rapidapi.com/artist/"+deezerArtistID,
+                "url": "https://deezerdevs-deezer.p.rapidapi.com/artist/" + deezerArtistID,
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",

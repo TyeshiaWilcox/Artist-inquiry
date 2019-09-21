@@ -21,16 +21,16 @@
 ​
     <body>
 ​
-        <div class="jumbotron jumbotron-fluid text-center">
+        <div id="banner" class="jumbotron jumbotron-fluid text-center">
             <!-- Tentative title -->
             <h1 class="display-4">Artistry</h1>
         </div>
 ​
         <!-- Body container content -->
-        <div class="container">
+        <div  class="container">
             <div class="row" id="content">
                 <div class="col-md-4" id="search">
-                    <div class="card">
+                    <div  id="search-card" class="card">
                         <div class="card-header">
                             Search input
                         </div>
@@ -38,11 +38,11 @@
                             <!-- Input group: label for Artist search, and artist search input -->
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <label for="search-term" class="input-group-text">Artist</label>
+                                    <label  for="search-term" class="input-group-text">Artist</label>
                                 </div>
-                                <input type="text" class="form-control" id="search-term">
+                                <input   type="text" class="form-control" id="search-term">
                             </div>
-                            <div class="text-center">
+                            <div  class="text-center">
                                 <button type="submit" class="btn btn-primary" id="btnFetch">Search</button>  
                             </div>
                         </div>
@@ -55,6 +55,7 @@
                 </div>
                 <div class="col-md-4" id="music">
                     <!-- Appended from js/app.js -->
+                    <p>Genre and Similar Artist</p>
                 </div>
             </div>
             
@@ -63,7 +64,6 @@
         </div>
     </body>
 </html>
-Collapse
 
 
 

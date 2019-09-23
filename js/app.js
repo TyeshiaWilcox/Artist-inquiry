@@ -179,24 +179,5 @@ $(document).ready(function() {
         getData(t);
     }
 
-    var cnt = 1;
-    function changeColor() {
-        // if cnt === 1 change initial css image
-            if (cnt === 1) {
-                $("#banner").css("color", "aqua");
-                $("#banner").css("background-color" , "navyblue");
-                cnt = 2;
-            }
-            else {
-                // change back to original image
-                $("#banner").css("color", "white");
-                $("#banner").css("background-color", "black");
-                cnt = 1;
-            }
-        }
-        // start changeColor
-        setInterval(changeColor, 3000);
-    // });
     
-
 });

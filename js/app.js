@@ -179,5 +179,21 @@ $(document).ready(function() {
         getData(t);
     }
 
-    
+    var cnt = 1;
+    function changeColor() {
+        // if cnt === 1 change initial css image
+            if (cnt === 1) {
+                $("h1").css("color", "aqua");
+                $("h1").css("background-font-color", "blue");
+                cnt = 2;
+            }
+            else {
+                // change back to original image
+                $("h1").css("color", "white");
+                $("h1").css("background-font-color", "grey");
+                cnt = 1;
+            }
+        }
+        // start changeColor
+        setInterval(changeColor, 3000);
 });

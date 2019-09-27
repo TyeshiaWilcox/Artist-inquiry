@@ -302,7 +302,6 @@ $(document).ready(function () {
         e.preventDefault();
         // Declare & assign new variable to text content of the link clicked by user, and run function clickedSearch with that as parameter
         var searchSimArt = this.textContent;
-        console.log("search SA: " + searchSimArt);
         clickedSearch(searchSimArt);
     });
     // function clickedSearch(t) {
@@ -317,7 +316,6 @@ $(document).ready(function () {
         // display all info to page
         setTimeout(function () {
             showInfo(result);
-            console.log(result);
         }, 1000);
         setTimeout(function () {
             showDiscography(result.releases);

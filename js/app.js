@@ -18,7 +18,7 @@ $(document).ready(function () {
             var lastFmSearch = {
                 "async": true,
                 "crossDomain": true,
-                "url": "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + name + "&api_key=d4a380aaf885c9d212b299849e585e3f&format=json",
+                "url": "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + name + "&api_key=d4a380aaf885c9d212b299849e585e3f&format=json",
                 "method": "POST",
             };
             // Discogs AJAX artist search settings

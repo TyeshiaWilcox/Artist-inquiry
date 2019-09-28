@@ -254,7 +254,7 @@ $(document).ready(function () {
     function showDiscography(record) {
         // add new <div> for discography, put a Bootstrap jumbotron component inside
         var discoSection = $("<div>").addClass("row").attr('id', 'disco-section');
-        var discJumbo = $("<div>").addClass("jumbotron jumbotron-fluid").attr('id', 'disco-jumbotron');
+        var discJumbo = $("<div>").addClass("jumbotron jumbotron-fluid").attr('id', 'disco-jumbotron').css('padding-left','10px');
         // add header to new jumbotron, add new list to jumbotron
         var discoList = $("<ul>").addClass("list-unstyled");
         // for each album, create new <li> element in discoList
@@ -262,12 +262,12 @@ $(document).ready(function () {
             var discoAlbum = $("<li>").addClass("media");
             var discoAlbumBody = $("<div>").addClass("media-body");
             // Create new header, with text of album title, and a subheader for the release year
-            var albumHeader = $("<br><h5>").addClass("mt-0 mb-1").text(record[i].title);
+            var albumHeader = $("<br><h5>").addClass("mt-0 mb-1").text(record[i].title).css('padding-left','5px');
             discoAlbumBody.append(albumHeader);
-            var discoAlbumText = $("<p>").text("Release Year: " + record[i].release_year);
+            var discoAlbumText = $("<p>").text("Release Year: " + record[i].release_year).css('padding-left','5px');
             discoAlbumBody.append(discoAlbumText);
             // create new list for each track
-            var tracklisting = $("<ul>").addClass("list-unstyled");
+            var tracklisting = $("<ul>").addClass("list-unstyled").css('padding-left','5px');
             for (var j = 0; j < record[i].numOfSongs; j++) {
                 var newTrack = record[i].tracks[j].title;
                 var newTrackNum = record[i].tracks[j].number;
@@ -279,7 +279,7 @@ $(document).ready(function () {
             // add tracklisting to each album body in discography
             discoAlbumBody.append(tracklisting);
             discoAlbum.append(discoAlbumBody);
-            discoAlbum.append($("<img>").addClass("mr-3 center").attr('src', record[i].img).attr('height','200px').attr('width','200px'));
+            discoAlbum.append($("<img>").addClass("mr-3 center").attr('src', record[i].img).attr('height','200px').attr('width','200px').attr('alt',"Album cover"));
             discoAlbum.append("<hr>");
             discoList.append(discoAlbum);
         }

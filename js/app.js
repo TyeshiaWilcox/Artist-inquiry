@@ -302,6 +302,7 @@ $(document).ready(function () {
         e.preventDefault();
         // Declare & assign new variable to text content of the link clicked by user, and run function clickedSearch with that as parameter
         var searchSimArt = this.textContent;
+        $("#search-term").val(searchSimArt)
         clickedSearch(searchSimArt);
     });
     // function clickedSearch(t) {
@@ -310,6 +311,10 @@ $(document).ready(function () {
         $("#bio").empty();
         $("#music").empty();
         $("#disco-section").remove();
+        // var spinner = $("<span>").addClass("spinner-grow spinner-grow-sm").attr('role','status').attr('aria-hidden','true');
+        $("#spinner").css('display','inline-flex');
+        $("#btnText").text("Loading...");
+        $("#btnFetch").attr('disabled',true);
         // create new Artist for result
         result = new Artist(name);
         result.getDiscogsArtist(name, result.searchData[1], result.getReleases);
@@ -320,6 +325,11 @@ $(document).ready(function () {
         setTimeout(function () {
             showDiscography(result.releases);
         }, 2000);
+        setTimeout(function() {
+            $("#spinner").css('display','none');
+            $("#btnText").text("Search");
+            $("#btnFetch").attr('disabled',false);
+        },2500);
     }
     // use var cnt to simplify keeping track of change condition
     var cnt = 1;

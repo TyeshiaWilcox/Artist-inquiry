@@ -31,3 +31,6 @@ body {
 #search-card .card-header {
     color: white;
 }
+#spinner {
+    display: none;
+}
